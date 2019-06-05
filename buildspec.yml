@@ -1,0 +1,10 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - aws cloudformation package --template-file modelTemplate.yaml --s3-bucket misrecursos --output-template-file outputModelTemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - modelTemplate.yaml
+    - outputModelTemplate.yaml
